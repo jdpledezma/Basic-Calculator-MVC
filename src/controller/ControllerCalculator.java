@@ -4,12 +4,9 @@ import model.ModelCalculator;
 import view.ViewCalculator;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 
-public class ControllerCalculator implements ActionListener, KeyListener {
+public class ControllerCalculator implements ActionListener, KeyListener, MouseListener {
     ModelCalculator model = new ModelCalculator();
     ViewCalculator view = new ViewCalculator();
 
@@ -35,7 +32,7 @@ public class ControllerCalculator implements ActionListener, KeyListener {
 
         this.view.addKeyListener(this);
         this.view.setFocusable(true);
-
+        this.view.getBtnEqual().addMouseListener((MouseListener) this);
 
     }
 
@@ -544,6 +541,34 @@ public class ControllerCalculator implements ActionListener, KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+
+    }
+
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if( e.getButton() == MouseEvent.BUTTON3){
+            JOptionPane.showMessageDialog(null, "Se ha hecho clic con el botón derecho");
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
 
     }
 }
