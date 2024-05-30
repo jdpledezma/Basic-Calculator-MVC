@@ -548,7 +548,7 @@ public class ControllerCalculator implements ActionListener, KeyListener, MouseL
     @Override
     public void mouseClicked(MouseEvent e) {
         if( e.getButton() == MouseEvent.BUTTON3){
-            JOptionPane.showMessageDialog(null, "Se ha hecho clic con el botón derecho");
+            JOptionPane.showMessageDialog(null, "You have right clicked");
         }
     }
 
